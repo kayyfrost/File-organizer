@@ -16,7 +16,9 @@ Message: %(message)s
 logging.basicConfig(level=logging.INFO, filename=r'D:\PROGRAM FILES\DOCUMENTS\ESSENTIALS\SCRIPTS\file_organizer_log.log', format=format)
 
 #check for anything new
-path = r'C:\Users\Frostt\Downloads'
+from pathlib import Path
+
+path = Path.home() / "Downloads"
 
 def watch_folder():
     seen = set(os.listdir(path))
